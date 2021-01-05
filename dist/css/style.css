@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-
 body {
   margin: 0;
-  font-family: "Roboto Light";
+  font-family: Helvetica Neue;
+}
+
+body p {
+  margin: 5px 0;
 }
 
 * {
@@ -30,6 +32,17 @@ header .header__container {
   -ms-flex-align: center;
   align-items: center;
   margin-top: 10px;
+}
+
+header .header__cart-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+header .header__cart-button:active,
+header .header__cart-button:focus {
+  outline: none;
 }
 
 .main {
@@ -88,12 +101,12 @@ header .header__container {
 }
 
 .main .main__content .form__heading {
-  font: 26px/31px "Roboto Light";
+  font: 26px/31px Helvetica Neue;
   color: #5A1094;
 }
 
 .main .main__content h3 {
-  font: 16px/18px "Roboto Light";
+  font: 16px/18px Helvetica Neue;
   color: #5A1094;
   margin-bottom: 0;
 }
@@ -209,6 +222,73 @@ header .header__container {
   background: #f8f8f8;
   width: 40%;
   border-radius: 0 10px 10px 0;
+  padding: 22px 15px 0 15px;
+}
+
+.main .order h4 {
+  font: 18px/20px Helvetica Neue;
+  color: #5A1094;
+  margin: 0 0 10px 0;
+}
+
+.main .order .order__item-black {
+  font: 10px/12px Helvetica Neue;
+  color: #2B2525;
+  margin: 2px 0;
+}
+
+.main .order h5,
+.main .order .order__item-gray {
+  font: 12px/11px Helvetica Neue;
+  margin: 0 0 7px 0;
+  color: #777879;
+}
+
+.main .order .order__item-gray p {
+  padding: 3px 0;
+}
+
+.main .order .order__divide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.main .order .order__item-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+}
+
+.main .order .order__item,
+.main .order .order__summary {
+  padding: 12px 0;
+  border-bottom: solid 1px #E3E3E3;
+}
+
+.main .order .order__total {
+  font: bold 12px/13px Helvetica Neue;
+  color: #431C5D;
+}
+
+.main .order .order__edit {
+  font: 12px/14px Helvetica Neue;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #979797;
+}
+
+.main .order .order__edit:active,
+.main .order .order__edit:focus {
+  outline: none;
 }
 
 @media screen and (max-width: 800px) {

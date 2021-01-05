@@ -1,8 +1,9 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body {
   margin: 0;
-  font-family: "Roboto Light";
+  font-family: Helvetica Neue;
+  p {
+    margin: 5px 0;
+  }
 }
 
 *{
@@ -34,6 +35,14 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+  }
+  .header__cart-button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    &:active, &:focus{
+      outline: none;
+    }
   }
 }
 
@@ -79,14 +88,14 @@ header{
         font-size: 26px;
         line-height: 31px;
         color: #5A1094;
-        font-family: "Roboto Light";
+        font-family: Helvetica Neue;
       }
 
       h3{
         font-size: 16px;
         line-height: 18px;
         color: #5A1094;
-        font-family: "Roboto Light";
+        font-family: Helvetica Neue;
         margin-bottom: 0;
       }
       .form__fieldset{
@@ -158,6 +167,71 @@ header{
       background: rgb(248, 248, 248);
       width: 40%;
       border-radius: 0 10px 10px 0;
+      padding: 22px 15px 0 15px;
+
+      h4 {
+        font-size: 18px;
+        line-height: 20px;
+        color: #5A1094;
+        font-family: Helvetica Neue;
+        margin: 0 0 10px 0;
+      }
+      .order__item-black {
+        font-family: Helvetica Neue;
+        font-size: 10px;
+        line-height: 12px;
+        color: #2B2525;
+        margin: 2px 0;
+      }
+
+      h5, .order__item-gray {
+        margin: 0 0 7px 0;
+        font-family: Helvetica Neue;
+        font-size: 12px;
+        line-height: 11px;
+        color: #777879;
+      }
+      .order__item-gray p{
+        padding: 3px 0;
+      }
+
+      .order__divide{
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .order__item-description{
+        display: flex;
+        column-gap: 10px;
+      }
+
+      .order__item, .order__summary{
+        padding: 12px 0;
+        border-bottom: solid 1px #E3E3E3;
+      }
+
+      .order__total {
+        font-family: Helvetica Neue;
+        font-size: 12px;
+        line-height: 13px;
+        color: #431C5D;
+        font-weight: bold;
+      }
+
+      .order__edit {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        text-decoration: underline;
+        font-family: Helvetica Neue;
+        font-size: 12px;
+        line-height: 14px;
+        color: #979797;
+        &:active, &:focus{
+          outline: none;
+        }
+      }
+
     }
 
   }
