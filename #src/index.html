@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header__container">
+            <div class="header__heading">
+                <img src="img/Group%203.svg" alt="logo">
+                <img src="img/Shipping%20Info.svg" alt="Front-end developer test task">
+            </div>
+            <div class="header__cart">
+                <img src="img/cart.svg" alt="shopping cart">
+            </div>
+        </div>
+    </div>
+</header>
+<div class="main">
+    <div class="container">
+        <div class="main__content">
+        <div class="shipping">
+            <nav class="main__navigation">
+                <div class="main__step text-active" tabindex="0">Shipping</div>
+                <div class="main__next symbol-active">
+                    <img src="img/nav_icon.png" alt="next">
+                </div>
+                <div class="main__step" tabindex="0">Billing</div>
+                <div class="main__next">
+                    <img src="img/nav_icon.png" alt="next">
+                </div>
+                <div class="main__step" tabindex="0">Payment</div>
+            </nav>
+            <section class="form shipping__form">
+                <h2 class="form__heading">Shipping info</h2>
+                <h3>Recipient</h3>
+                <fieldset class="form__fieldset">
+                    <input class="form__long" name="shipping_name" id="shipping-name" placeholder="Full Name" required min="3">
+                    <input class="form__middle" type="tel" id="shipping_phone" name="shipping_phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Daytime Phone" min="8">
+                    <div class="label">For delivery questions only</div>
+                </fieldset>
+                <h3>Address</h3>
+                <fieldset class="form__fieldset">
+                    <input class="form__long" placeholder="Street Address" id="shipping_address" name="shipping_address">
+                    <input class="form__long" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" id="shipping_ad_address" name="shipping_ad_address">
+                    <input class="form__long" placeholder="City" id="shopping_city" name="shopping-city">
+                    <select class="form__middle" id="shipping_country" name="shipping_country">
+                        <option disabled selected>Country</option>
+                    </select>
+                    <input class="form__short" type="number" placeholder="ZIP" name="shipping-zip" id="shipping-zip">
+                </fieldset>
+                <button class="form__next">Continue</button>
+            </section>
+        </div>
+        <div class="order">
+
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
