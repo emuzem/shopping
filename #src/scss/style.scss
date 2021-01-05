@@ -6,6 +6,11 @@ body {
   }
 }
 
+.order__divide{
+  display: flex;
+  justify-content: space-between;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -91,6 +96,21 @@ header{
         font-family: Helvetica Neue;
       }
 
+    .form__heading-button{
+      background: transparent;
+      cursor: pointer;
+      text-decoration: underline;
+      border: none;
+      font-family: Helvetica Neue;
+      font-size: 12px;
+      line-height: 14px;
+      color: #5A1094;
+
+      &:active, &:focus {
+        outline: none;
+      }
+    }
+
       h3{
         font-size: 16px;
         line-height: 18px;
@@ -105,10 +125,16 @@ header{
         flex-wrap: wrap;
         margin: 0 -12px 0 -12px;
         column-gap: 15px;
+        select{
+            color: #6B6B6B;;
+          }
+
+    input {
+      color: black;
+    }
         input, select {
           font-size: 16px;
           line-height: 18px;
-          color: #6B6B6B;
           display: block;
           padding: 15px;
           border-radius: 5px;
@@ -138,7 +164,12 @@ header{
           width: 30%;
           flex-grow: 1;
         }
-
+        .form__short-payment {
+          width: 40%;
+        }
+        .form__short-wrapper{
+          margin: 0 0 0 -100px;
+        }
         .label {
           display: inline-flex;
           align-self: center;
@@ -163,7 +194,7 @@ header{
     }
 
     }
-    .order{
+    .order {
       background: rgb(248, 248, 248);
       width: 40%;
       border-radius: 0 10px 10px 0;
@@ -176,6 +207,7 @@ header{
         font-family: Helvetica Neue;
         margin: 0 0 10px 0;
       }
+
       .order__item-black {
         font-family: Helvetica Neue;
         font-size: 10px;
@@ -191,21 +223,17 @@ header{
         line-height: 11px;
         color: #777879;
       }
-      .order__item-gray p{
+
+      .order__item-gray p {
         padding: 3px 0;
       }
 
-      .order__divide{
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .order__item-description{
+      .order__item-description {
         display: flex;
         column-gap: 10px;
       }
 
-      .order__item, .order__summary{
+      .order__item, .order__summary {
         padding: 12px 0;
         border-bottom: solid 1px #E3E3E3;
       }
@@ -227,7 +255,8 @@ header{
         font-size: 12px;
         line-height: 14px;
         color: #979797;
-        &:active, &:focus{
+
+        &:active, &:focus {
           outline: none;
         }
       }
@@ -235,3 +264,16 @@ header{
     }
 
   }
+
+.payment{
+  label {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    line-height: 18px;
+    color: #5A1094;
+  }
+}
+
+.form__payment-secure{
+  padding-bottom: 20px;
+}
