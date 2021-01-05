@@ -6,14 +6,15 @@ body {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .order__divide{
   display: flex;
   justify-content: space-between;
 }
 
-*{
-  box-sizing: border-box;
-}
 
 .container {
   padding: 0 150px;
@@ -56,15 +57,15 @@ header{
   padding: 48px 0 70px 0;
 
   .main__content{
+    position: relative;
     height: 670px;
     background: white;
     display: flex;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
     border-radius: 10px;
     .shipping {
-      width: 60%;
+      width: 400px;
       padding: 22px 37px 37px 37px;
-      box-sizing: border-box;
     }
       .main__navigation{
         display: flex;
@@ -167,9 +168,6 @@ header{
         .form__short-payment {
           width: 40%;
         }
-        .form__short-wrapper{
-          margin: 0 0 0 -100px;
-        }
         .label {
           display: inline-flex;
           align-self: center;
@@ -196,7 +194,7 @@ header{
     }
     .order {
       background: rgb(248, 248, 248);
-      width: 40%;
+      width: 400px;
       border-radius: 0 10px 10px 0;
       padding: 22px 15px 0 15px;
 
