@@ -21,7 +21,7 @@ nextBtn.forEach((el, i) => {
         if (offset === +width.slice(0, width.length - 2) * (formBlock.length - 1)) {
             offset = 0;
         } else {
-            offset += +width.slice(0, width.length - 2) + 55;
+            offset += +width.slice(0, width.length - 2);
         }
         formBlock[i+1].classList.remove('hidden');
         inner.style.transform = `translateX(-${offset}px)`;

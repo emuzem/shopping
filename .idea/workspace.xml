@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6ba6beb-f0e0-4c98-834b-c8ad52a4f8f1" name="Default Changelist" comment="" />
+    <list default="true" id="a6ba6beb-f0e0-4c98-834b-c8ad52a4f8f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/#src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/#src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/#src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/#src/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +22,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1mcalKbckxXpvFH9W5jgb1CKySc" />
   <component name="ProjectViewState">
@@ -44,7 +54,9 @@
       <option name="presentableId" value="Default" />
       <updated>1609795483333</updated>
       <workItem from="1609795484506" duration="4503000" />
-      <workItem from="1609839176674" duration="27580000" />
+      <workItem from="1609839176674" duration="29177000" />
+      <workItem from="1609879149837" duration="608000" />
+      <workItem from="1609934220510" duration="672000" />
     </task>
     <servers />
   </component>
@@ -56,5 +68,16 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="408" y="141" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1609863927611" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/#src/js/script.js</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

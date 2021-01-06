@@ -62,16 +62,18 @@ header .header__cart-button:focus {
   position: relative;
   height: 670px;
   background: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-areas: "payment bill";
+  grid-template-columns: 2fr 1fr;
+  overflow: hidden;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
 .main .main__content .shipping {
-  width: 400px;
+  grid-area: payment;
+  max-width: 500px;
   padding: 22px 37px 37px 37px;
 }
 
@@ -255,6 +257,7 @@ header .header__cart-button:focus {
   width: 400px;
   border-radius: 0 10px 10px 0;
   padding: 22px 15px 0 15px;
+  grid-area: bill;
 }
 
 .main .order h4 {

@@ -60,11 +60,15 @@ header{
     position: relative;
     height: 670px;
     background: white;
-    display: flex;
+    display: grid;
+    grid-template-areas: "payment bill";
+    grid-template-columns: 2fr 1fr;
+    overflow: hidden;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
     border-radius: 10px;
     .shipping {
-      width: 400px;
+      grid-area: payment;
+      max-width: 500px;
       padding: 22px 37px 37px 37px;
     }
       .main__navigation{
@@ -197,7 +201,7 @@ header{
       width: 400px;
       border-radius: 0 10px 10px 0;
       padding: 22px 15px 0 15px;
-
+      grid-area: bill;
       h4 {
         font-size: 18px;
         line-height: 20px;
