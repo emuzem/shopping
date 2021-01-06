@@ -7,7 +7,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .order__divide{
@@ -23,13 +23,22 @@ body {
   .container {
     padding: 0 50px;
   }
+  .main {
+    .main__content {
+      grid-template-areas: "payment" "bill";
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+    }
+  }
 }
 @media screen and (max-width: 600px) {
   .container {
     padding: 0 10px;
   }
-  .main__content{
-    flex-direction: column-reverse;
+  .main {
+    .main__content {
+      flex-direction: column-reverse;
+    }
   }
 }
 
@@ -58,7 +67,7 @@ header{
 
   .main__content{
     position: relative;
-    height: 670px;
+    min-height: 670px;
     background: white;
     display: grid;
     grid-template-areas: "payment bill";
@@ -67,9 +76,9 @@ header{
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
     border-radius: 10px;
     .shipping {
-      grid-area: payment;
       max-width: 500px;
       padding: 22px 37px 37px 37px;
+      grid-area: payment;
     }
       .main__navigation{
         display: flex;
@@ -198,7 +207,7 @@ header{
     }
     .order {
       background: rgb(248, 248, 248);
-      width: 400px;
+      min-width: 400px;
       border-radius: 0 10px 10px 0;
       padding: 22px 15px 0 15px;
       grid-area: bill;

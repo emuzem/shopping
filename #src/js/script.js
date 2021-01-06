@@ -3,7 +3,7 @@ const formBlock = document.querySelectorAll('.shipping');
 const wrapper = document.querySelector('.form__wrapper');
 const inner = document.querySelector('.slides__inner');
 
-const width = window.getComputedStyle(inner).width;
+const width = window.getComputedStyle(wrapper).width;
 
 let offset = 0;
 
@@ -24,6 +24,9 @@ nextBtn.forEach((el, i) => {
             offset += +width.slice(0, width.length - 2);
         }
         formBlock[i+1].classList.remove('hidden');
+        setTimeout(()=>{
+            formBlock[i].classList.add('hidden');
+        }, 300)
         inner.style.transform = `translateX(-${offset}px)`;
     });
 });
