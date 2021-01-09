@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
-<body>
+<body onload="findGeo()">
 <header class="header">
     <div class="container">
         <div class="header__container">
@@ -17,12 +17,13 @@
                 <img src="img/Shipping%20Info.svg" alt="Front-end developer test task">
             </div>
             <div class="header__cart">
-                <button class="header__cart-button"><img src="img/cart.svg" alt="shopping cart"></button>
+                <button type="button" class="header__cart-button"><img src="img/cart.svg" alt="shopping cart"></button>
             </div>
         </div>
     </div>
 </header>
 <div class="main">
+    <form id="form">
     <div class="container">
         <div class="main__content">
             <div class="form__wrapper">
@@ -44,20 +45,18 @@
                 <h3>Recipient</h3>
                 <fieldset class="form__fieldset">
                     <input class="form__long" name="shipping_name" id="shipping-name" required minlength="3" placeholder="Full Name">
-                    <input class="form__middle" type="tel" id="shipping_phone" name="shipping_phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Daytime Phone" min="8">
+                        <input class="form__long" name="shopping__country" id="shopping_country" placeholder="Country">
+                    <input class="form__middle phone" type="tel" id="shipping_phone" name="shipping_phone" placeholder="Daytime Phone" min="8">
                     <div class="label">For delivery questions only</div>
                 </fieldset>
                 <h3>Address</h3>
                 <fieldset class="form__fieldset">
                     <input class="form__long" placeholder="Street Address" id="shipping_address" name="shipping_address">
                     <input class="form__long" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" id="shipping_ad_address" name="shipping_ad_address">
-                    <input class="form__long" placeholder="City" id="shopping_city" name="shopping-city">
-                    <select class="form__middle" id="shipping_country" name="shipping_country">
-                        <option disabled selected>Country</option>
-                    </select>
-                    <input class="form__short" type="number" placeholder="ZIP" name="shipping-zip" id="shipping-zip" minlength="5" maxlength="5">
+                    <input class="form__middle" placeholder="City" id="shopping_city" name="shopping-city">
+                    <input class="form__short" placeholder="ZIP" name="shipping-zip" id="shipping-zip">
                 </fieldset>
-                <button class="form__next next">Continue</button>
+                <button class="form__next next" type="button">Continue</button>
             </section>
         </div>
 
@@ -76,7 +75,7 @@
                 <section class="form shipping__form">
                     <div class="order__divide">
                         <h2 class="form__heading">Billing Information</h2>
-                        <button class="form__heading-button">Same as shipping</button>
+                        <button type="button" class="form__heading-button">Same as shipping</button>
                     </div>
                     <h3>Billing contact</h3>
                     <fieldset class="form__fieldset">
@@ -88,12 +87,10 @@
                         <input class="form__long" placeholder="Street Address" id="billing_address" name="billing_address">
                         <input class="form__long" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" id="billing_ad_address" name="billing_ad_address">
                         <input class="form__long" placeholder="City" id="billing_city" name="billing-city">
-                        <select class="form__middle" id="billing_country" name="billing_country">
-                            <option disabled selected>Country</option>
-                        </select>
+                        <input class="form__long" name="billing__country" id="billing_country" placeholder="Country">
                         <input class="form__short" type="number" placeholder="ZIP" name="billing-zip" id="billing-zip" minlength="5" maxlength="5">
                     </fieldset>
-                    <button class="form__next next">Continue</button>
+                    <button class="form__next next" type="button">Continue</button>
                 </section>
             </div>
 
@@ -120,7 +117,7 @@
                     </fieldset>
                     <fieldset class="form__fieldset">
                         <label for="payment_card">Card Number</label>
-                        <input class="form__long" type="number" placeholder="XXXX XXXX XXXX XXXX XXXX" name="payment_card" id="payment_card">
+                        <input class="form__long" type="tel" placeholder="XXXX XXXX XXXX XXXX XXXX" name="payment_card" id="payment_card">
                     </fieldset>
                     <div class="form__payment-little">
                     <fieldset class="form__fieldset">
@@ -134,9 +131,16 @@
                         </div>
                     </fieldset>
                     </div>
-                    <button id="submit" class="form__next" type="submit">Pay Securely</button>
+                    <button id="submit" class="form__next next" type="submit">Pay Securely</button>
                 </section>
             </div>
+                    <div class="shipping hidden bill">
+                       <h1 class="form__heading">Thank you for your order!</h1>
+                        <p><b>Order number is: 172837837128</b></p>
+                        <p>You will receive an email confirmation shortly to <a href="#"><span id="bill-email"></span></a></p>
+                        <p>Estimated delivery day is <br><b>Friday 1st April 2016</b></p>
+                        <button><a href="#">print recipe</a></button>
+                    </div>
             </div>
             </div>
 
@@ -144,7 +148,7 @@
             <div class="order__heading order__divide">
                 <h4>Order Summary</h4>
                 <div>
-                    <button class="order__edit">edit order</button>
+                    <button type="button" tabindex="0" class="order__edit">edit order</button>
                 </div>
             </div>
             <div class="order__item order__divide">
@@ -154,7 +158,10 @@
                         <p class="order__item-black">Black</p>
                         <p class="order__item-black">Quantity: 1</p></div>
                 </div>
+                <div class="order__edit-elem">
                 <div class="order__item-price order__item-gray">$235</div>
+                <button type="button" class="order__delete no-display">✖</button>
+                </div>
             </div>
             <div class="order__item order__divide">
                 <div class="order__item-description">
@@ -165,7 +172,10 @@
                         <p class="order__item-black">Reverse Denim + Brown leather</p>
                         <p class="order__item-black">Quantity: 1</p></div>
                 </div>
+                <div class="order__edit-elem">
                 <div class="order__item-price order__item-gray">$65</div>
+                    <button type="button" class="order__delete no-display">✖</button>
+                </div>
             </div>
             <div class="order__item order__divide">
                 <div class="order__item-description">
@@ -174,7 +184,10 @@
                         <p class="order__item-black">Reverse Denim + Black leather</p>
                         <p class="order__item-black">Quantity: 1</p></div>
                 </div>
-                <div class="order__item-price order__item-gray">$48</div>
+               <div class="order__edit-elem">
+                   <div class="order__item-price order__item-gray">$48</div>
+                   <button type="button" class="order__delete no-display">✖</button>
+               </div>
             </div>
             <div class="order__summary order__divide order__item-gray">
                 <div>
@@ -183,20 +196,39 @@
                     <p>Taxes</p>
                 </div>
                 <div style="text-align: right">
-                    <p>$398</p>
+                    <p class="order__total-price">$348</p>
                     <p>Free</p>
-                    <p>$12.12</p>
+                    <p class="order__total-taxes">$12.12</p>
                 </div>
             </div>
             <div class="order__total order__divide">
                 <p>Total</p>
-                <p>$410</p>
+                <p class="order__total-sum">$410</p>
             </div>
         </div>
     </div>
 </div>
+    </form>
 </div>
-
-<script src="js/script.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+<script defer type="text/javascript">
+    function findGeo () {
+            let geoAccess = confirm('test.flatstack.com wants to know your position:');
+            if (geoAccess) {
+                $(document).ready(function () {
+                    ymaps.ready(function () {
+                        let geolocation = ymaps.geolocation;
+                        document.querySelector('#shopping_country').value = geolocation.country;
+                        document.querySelector('#shopping_city').value = geolocation.city;
+                    });
+                });
+            }
+    }
+</script>
+<script src="https://unpkg.com/imask"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/script.js" type="module"></script>
+<script src="js/countries.js"></script>
 </body>
 </html>

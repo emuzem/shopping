@@ -109,11 +109,6 @@ header .header__cart-button:focus {
   filter: opacity(100%);
 }
 
-.main .main__content .form__heading {
-  font: 26px/31px Helvetica Neue;
-  color: #5A1094;
-}
-
 .main .main__content .form__heading-button {
   font: 12px/14px Helvetica Neue;
   background: transparent;
@@ -151,16 +146,8 @@ header .header__cart-button:focus {
   column-gap: 15px;
 }
 
-.main .main__content .form__fieldset select {
-  color: #6B6B6B;
-}
-
 .main .main__content .form__fieldset input {
   color: black;
-}
-
-.main .main__content .form__fieldset input,
-.main .main__content .form__fieldset select {
   font-size: 16px;
   line-height: 18px;
   display: block;
@@ -170,36 +157,31 @@ header .header__cart-button:focus {
   margin: 5px 5px 5px 0;
 }
 
-.main .main__content .form__fieldset input::-webkit-input-placeholder,
-.main .main__content .form__fieldset select::-webkit-input-placeholder {
+.main .main__content .form__fieldset input::-webkit-input-placeholder {
   font-size: 16px;
   line-height: 18px;
   color: #6B6B6B;
 }
 
-.main .main__content .form__fieldset input::-moz-placeholder,
-.main .main__content .form__fieldset select::-moz-placeholder {
+.main .main__content .form__fieldset input::-moz-placeholder {
   font-size: 16px;
   line-height: 18px;
   color: #6B6B6B;
 }
 
-.main .main__content .form__fieldset input:-ms-input-placeholder,
-.main .main__content .form__fieldset select:-ms-input-placeholder {
+.main .main__content .form__fieldset input:-ms-input-placeholder {
   font-size: 16px;
   line-height: 18px;
   color: #6B6B6B;
 }
 
-.main .main__content .form__fieldset input::-ms-input-placeholder,
-.main .main__content .form__fieldset select::-ms-input-placeholder {
+.main .main__content .form__fieldset input::-ms-input-placeholder {
   font-size: 16px;
   line-height: 18px;
   color: #6B6B6B;
 }
 
-.main .main__content .form__fieldset input::placeholder,
-.main .main__content .form__fieldset select::placeholder {
+.main .main__content .form__fieldset input::placeholder {
   font-size: 16px;
   line-height: 18px;
   color: #6B6B6B;
@@ -214,14 +196,11 @@ header .header__cart-button:focus {
 }
 
 .main .main__content .form__fieldset .form__middle {
-  width: 55%;
+  width: 50%;
 }
 
 .main .main__content .form__fieldset .form__short {
   width: 30%;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
 }
 
 .main .main__content .form__fieldset .form__short-payment {
@@ -324,6 +303,44 @@ header .header__cart-button:focus {
 
 .form__payment-secure {
   padding-bottom: 20px;
+}
+
+.order__edit-elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+.order__delete {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.no-display {
+  display: none;
+}
+
+.form__heading {
+  font: 26px/31px Helvetica Neue;
+  color: #5A1094;
+}
+
+.bill p {
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.bill button {
+  border: none;
+  background: transparent;
 }
 
 @media screen and (max-width: 800px) {

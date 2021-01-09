@@ -103,12 +103,6 @@ header{
         }
       }
 
-      .form__heading{
-        font-size: 26px;
-        line-height: 31px;
-        color: #5A1094;
-        font-family: Helvetica Neue;
-      }
 
     .form__heading-button{
       background: transparent;
@@ -139,14 +133,8 @@ header{
         flex-wrap: wrap;
         margin: 0 -12px 0 -12px;
         column-gap: 15px;
-        select{
-            color: #6B6B6B;;
-          }
-
-    input {
-      color: black;
-    }
-        input, select {
+        input {
+          color: black;
           font-size: 16px;
           line-height: 18px;
           display: block;
@@ -171,12 +159,11 @@ header{
         }
 
         .form__middle{
-          width: 55%;
+          width: 50%;
         }
 
         .form__short{
           width: 30%;
-          flex-grow: 1;
         }
         .form__short-payment {
           width: 40%;
@@ -287,4 +274,34 @@ header{
 
 .form__payment-secure{
   padding-bottom: 20px;
+}
+.order__edit-elem{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column-reverse;
+}
+.order__delete{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.no-display{
+  display: none;
+}
+
+.form__heading{
+  font-size: 26px;
+  line-height: 31px;
+  color: #5A1094;
+  font-family: Helvetica Neue;
+}
+.bill{
+  p{
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+  button{
+    border: none;
+    background: transparent;
+  }
 }
