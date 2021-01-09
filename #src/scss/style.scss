@@ -12,6 +12,14 @@ body {
   }
 }
 
+button:hover{
+  opacity: 0.8;
+}
+button {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
 .hidden {
   visibility: hidden;
 }

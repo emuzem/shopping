@@ -30,20 +30,17 @@ nextBtn.forEach((el, i) => {
             formBlock[i].classList.add('hidden');
         }, 300)
         inner.style.transform = `translateX(-${offset}px)`;
-        console.log(offset);
     });
 });
 
     stepElem.forEach((el, i) => {
         el.addEventListener('click', (ev) => {
             const slideTo = ev.target.getAttribute('data-slide-to');
-            console.log(formBlock[slideTo+1]);
             offset = +width.slice(0, width.length - 2) * (slideTo);
             formBlock[slideTo].classList.remove('hidden');
             setTimeout(() => {
                 formBlock[slideTo - 1].classList.add('hidden');
             }, 300);
-            console.log(offset);
             inner.style.transform = `translateX(-${offset}px)`;
         });
     });
@@ -93,6 +90,7 @@ const postData = async (url, data) => {
 
 function bindpostData (form) {
     form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
         const formData = new FormData(form);
 
@@ -101,8 +99,17 @@ function bindpostData (form) {
         postData('https://jsonplaceholder.typicode.com/posts', json)
             .then((response) => {
                 console.log(response);
+                const billEmail = document.querySelector('#bill-email');
+                billEmail.textContent = `${response.billing_email}`;
             })
             .catch(() => {
+                const slideTo = 2;
+                const offset = +width.slice(0, width.length - 2) * (slideTo);
+                formBlock[slideTo].classList.remove('hidden');
+                setTimeout(() => {
+                    formBlock[slideTo - 1].classList.add('hidden');
+                }, 300);
+                inner.style.transform = `translateX(-${offset}px)`;
             });
     });
 }
@@ -162,9 +169,6 @@ sameAsShippingBtn.addEventListener('click', () => {
     document.querySelector('#billing_address').value = document.querySelector('#shipping_address').value;
     document.querySelector('#billing_city').value = document.querySelector('#shopping_city').value;
 });
-
-const billEmail = document.querySelector('#bill-email');
-billEmail.textContent = document.querySelector('#billing_email').value;
 //
 
 

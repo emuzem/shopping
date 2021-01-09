@@ -45,16 +45,16 @@
                 <h3>Recipient</h3>
                 <fieldset class="form__fieldset">
                     <input class="form__long" name="shipping_name" id="shipping-name" required minlength="3" placeholder="Full Name">
-                        <input class="form__long" name="shopping__country" id="shopping_country" placeholder="Country">
-                    <input class="form__middle phone" type="tel" id="shipping_phone" name="shipping_phone" placeholder="Daytime Phone" min="8">
+                        <input class="form__long" name="shopping__country" required id="shopping_country" placeholder="Country">
+                    <input class="form__middle phone" type="tel" id="shipping_phone" required name="shipping_phone" placeholder="Daytime Phone" min="8">
                     <div class="label">For delivery questions only</div>
                 </fieldset>
                 <h3>Address</h3>
                 <fieldset class="form__fieldset">
-                    <input class="form__long" placeholder="Street Address" id="shipping_address" name="shipping_address">
+                    <input class="form__long" required placeholder="Street Address" id="shipping_address" name="shipping_address">
                     <input class="form__long" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" id="shipping_ad_address" name="shipping_ad_address">
-                    <input class="form__middle" placeholder="City" id="shopping_city" name="shopping-city">
-                    <input class="form__short" placeholder="ZIP" name="shipping-zip" id="shipping-zip">
+                    <input class="form__middle" required placeholder="City" id="shopping_city" name="shopping-city">
+                    <input class="form__short" required placeholder="ZIP" name="shipping-zip" id="shipping-zip">
                 </fieldset>
                 <button class="form__next next" type="button">Continue</button>
             </section>
@@ -80,15 +80,15 @@
                     <h3>Billing contact</h3>
                     <fieldset class="form__fieldset">
                         <input class="form__long" name="billing_name" id="billing_name" required minlength="3" placeholder="Full Name">
-                        <input class="form__long" name="billing_email" type="email" id="billing_email" placeholder="Email Address">
+                        <input required class="form__long" name="billing_email" type="email" id="billing_email" placeholder="Email Address">
                     </fieldset>
                     <h3>Billing Address</h3>
                     <fieldset class="form__fieldset">
-                        <input class="form__long" placeholder="Street Address" id="billing_address" name="billing_address">
+                        <input required class="form__long" placeholder="Street Address" id="billing_address" name="billing_address">
                         <input class="form__long" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" id="billing_ad_address" name="billing_ad_address">
-                        <input class="form__long" placeholder="City" id="billing_city" name="billing-city">
-                        <input class="form__long" name="billing__country" id="billing_country" placeholder="Country">
-                        <input class="form__short" type="number" placeholder="ZIP" name="billing-zip" id="billing-zip" minlength="5" maxlength="5">
+                        <input required class="form__long" placeholder="City" id="billing_city" name="billing-city">
+                        <input required class="form__long" name="billing__country" id="billing_country" placeholder="Country">
+                        <input required class="form__short" type="number" placeholder="ZIP" name="billing-zip" id="billing-zip" minlength="5" maxlength="5">
                     </fieldset>
                     <button class="form__next next" type="button">Continue</button>
                 </section>
@@ -113,21 +113,21 @@
                     </div>
                     <fieldset class="form__fieldset">
                         <label for="payment_name">Cardholder Name</label>
-                        <input class="form__long" placeholder="Name as it appears on your card" name="payment_name" id="payment_name">
+                        <input required class="form__long" placeholder="Name as it appears on your card" name="payment_name" id="payment_name">
                     </fieldset>
                     <fieldset class="form__fieldset">
                         <label for="payment_card">Card Number</label>
-                        <input class="form__long" type="tel" placeholder="XXXX XXXX XXXX XXXX XXXX" name="payment_card" id="payment_card">
+                        <input required class="form__long" type="tel" placeholder="XXXX XXXX XXXX XXXX XXXX" name="payment_card" id="payment_card">
                     </fieldset>
                     <div class="form__payment-little">
                     <fieldset class="form__fieldset">
                         <div>
                         <h3>Expire Date</h3>
-                        <input class="form__short-payment" placeholder="MM/YY" name="payment_date" id="payment_date">
+                        <input required class="form__short-payment" placeholder="MM/YY" name="payment_date" id="payment_date">
                         </div>
                         <div class="form__short-wrapper">
                         <h3>Security Code</h3>
-                        <input class="form__short-payment" name="payment_code" id="payment_code">
+                        <input required class="form__short-payment" name="payment_code" id="payment_code">
                         </div>
                     </fieldset>
                     </div>
@@ -137,7 +137,7 @@
                     <div class="shipping hidden bill">
                        <h1 class="form__heading">Thank you for your order!</h1>
                         <p><b>Order number is: 172837837128</b></p>
-                        <p>You will receive an email confirmation shortly to <a href="#"><span id="bill-email"></span></a></p>
+                        <p>You will receive an email confirmation shortly to</p><email id="bill-email"></email>
                         <p>Estimated delivery day is <br><b>Friday 1st April 2016</b></p>
                         <button><a href="#">print recipe</a></button>
                     </div>

@@ -12,6 +12,17 @@ body p {
   outline: none;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+
+button {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
 .hidden {
   visibility: hidden;
 }
