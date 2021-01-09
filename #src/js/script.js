@@ -30,8 +30,24 @@ nextBtn.forEach((el, i) => {
             formBlock[i].classList.add('hidden');
         }, 300)
         inner.style.transform = `translateX(-${offset}px)`;
+        console.log(offset);
     });
 });
+
+    stepElem.forEach((el, i) => {
+        el.addEventListener('click', (ev) => {
+            const slideTo = ev.target.getAttribute('data-slide-to');
+            console.log(formBlock[slideTo+1]);
+            offset = +width.slice(0, width.length - 2) * (slideTo);
+            formBlock[slideTo].classList.remove('hidden');
+            setTimeout(() => {
+                formBlock[slideTo - 1].classList.add('hidden');
+            }, 300);
+            console.log(offset);
+            inner.style.transform = `translateX(-${offset}px)`;
+        });
+    });
+
 
 //countries
 const phone = document.querySelectorAll('.phone');

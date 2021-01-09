@@ -7,6 +7,11 @@ body p {
   margin: 5px 0;
 }
 
+*:active,
+*:focus {
+  outline: none;
+}
+
 .hidden {
   visibility: hidden;
 }
