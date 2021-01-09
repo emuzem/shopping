@@ -25,16 +25,19 @@ body {
 .container {
   padding: 0 150px;
 }
-@media screen and (max-width: 800px) {
-  .container {
-    padding: 0 50px;
-  }
+
+@media screen and (max-width: 1260px) {
   .main {
     .main__content {
       grid-template-areas: "payment" "bill";
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 100% 1fr;
       grid-template-columns: 1fr;
     }
+  }
+}
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 0 50px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -48,6 +51,26 @@ body {
   }
 }
 
+@media screen and (max-width: 450px) {
+  .container{
+    padding: 0;
+  }
+  .order{
+    max-width: 400px;
+  }
+  .main {
+    .main__content {
+      .shipping {
+        padding: 0 5px;
+        input {
+          padding: 20px 0 20px 20px;
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
 header{
   border-bottom: solid 1px rgba(255,24,118,0.25);
   height: 45px;
@@ -56,6 +79,7 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+    flex-wrap: wrap;
   }
   .header__cart-button{
     border: none;

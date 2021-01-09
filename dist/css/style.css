@@ -45,6 +45,8 @@ header .header__container {
   -ms-flex-align: center;
   align-items: center;
   margin-top: 10px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 header .header__cart-button {
@@ -348,15 +350,17 @@ header .header__cart-button:focus {
   background: transparent;
 }
 
+@media screen and (max-width: 1260px) {
+  .main .main__content {
+    grid-template-areas: "payment" "bill";
+    grid-template-rows: 100% 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .container {
     padding: 0 50px;
-  }
-
-  .main .main__content {
-    grid-template-areas: "payment" "bill";
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
   }
 }
 
@@ -370,5 +374,24 @@ header .header__cart-button:focus {
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 0;
+  }
+
+  .order {
+    max-width: 400px;
+  }
+
+  .main .main__content .shipping {
+    padding: 0 5px;
+  }
+
+  .main .main__content .shipping input {
+    padding: 20px 0 20px 20px;
+    width: 90%;
   }
 }

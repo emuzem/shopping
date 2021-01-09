@@ -5,7 +5,7 @@ const wrapper = document.querySelector('.form__wrapper');
 const inner = document.querySelector('.slides__inner');
 const stepElem = document.querySelectorAll('.main__step');
 
-const width = window.getComputedStyle(wrapper).width;
+const width = window.getComputedStyle(inner).width;
 
 let offset = 0;
 
