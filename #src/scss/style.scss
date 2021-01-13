@@ -1,0 +1,347 @@
+body {
+  margin: 0;
+  font-family: Helvetica Neue;
+  p {
+    margin: 5px 0;
+  }
+}
+
+* {
+  &:active, &:focus{
+    outline: none;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.order__divide{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.container {
+  padding: 0 150px;
+}
+
+@media screen and (max-width: 1260px) {
+  .main {
+    .main__content {
+      grid-template-areas: "payment" "bill";
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 0 10px;
+  }
+  .main {
+    .main__content {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container{
+    padding: 0;
+  }
+  .order{
+    max-width: 400px;
+  }
+  .main {
+    .main__content {
+      .shipping {
+        padding: 0 5px;
+        input {
+          padding: 20px 0 20px 20px;
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+header{
+  border-bottom: solid 1px rgba(255,24,118,0.25);
+  height: 45px;
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .header__cart-button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    &:active, &:focus{
+      outline: none;
+    }
+  }
+}
+
+.main {
+  background: #F2F2F2;
+  padding: 48px 0 70px 0;
+
+  .main__content{
+    position: relative;
+    min-height: 670px;
+    background: white;
+    display: grid;
+    grid-template-areas: "payment bill";
+    grid-template-columns: 2fr 1fr;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    border-radius: 10px;
+    .shipping {
+      max-width: 500px;
+      padding: 22px 37px 37px 37px;
+      grid-area: payment;
+    }
+      .main__navigation{
+        display: flex;
+        column-gap: 15px;
+
+        .main__step{
+          font-size: 12px;
+          line-height: 14px;
+          color: #979797;
+          margin-top: 3px;
+          cursor: pointer;
+        }
+        .text-active{
+          color: #5A1094;
+        }
+        .main__next{
+          filter: opacity(30%);
+          cursor: pointer;
+        }
+        .symbol-active{
+          filter: opacity(100%);
+        }
+      }
+
+
+    .form__heading-button{
+      background: transparent;
+      cursor: pointer;
+      text-decoration: underline;
+      border: none;
+      font-family: Helvetica Neue;
+      font-size: 12px;
+      line-height: 14px;
+      color: #5A1094;
+
+      &:active, &:focus {
+        outline: none;
+      }
+    }
+
+      h3{
+        font-size: 16px;
+        line-height: 18px;
+        color: #5A1094;
+        font-family: Helvetica Neue;
+        margin-bottom: 0;
+      }
+      .form__fieldset{
+        border: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -12px 0 -12px;
+        column-gap: 15px;
+        input {
+          color: black;
+          font-size: 16px;
+          line-height: 18px;
+          display: block;
+          padding: 15px;
+          border-radius: 5px;
+          border: solid 1px #DEDCDC;
+          margin: 5px 5px 5px 0;
+
+          &::placeholder{
+            font-size: 16px;
+            line-height: 18px;
+            color: #6B6B6B;
+          }
+
+        }
+
+        #shopping_city {
+          margin: 10px 5px 10px 0;
+        }
+        .form__long{
+          width: 100%;
+        }
+
+        .form__middle{
+          width: 50%;
+        }
+
+        .form__short{
+          width: 30%;
+        }
+        .form__short-payment {
+          width: 40%;
+        }
+        .label {
+          display: inline-flex;
+          align-self: center;
+          font-size: 14px;
+          line-height: 16px;
+          color: #6B6B6B;
+          width: 30%;
+        }
+      }
+
+    .form__next{
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: #FFFFFF;
+      width: 55%;
+      padding: 16px 0;
+      background: #5A1094;
+      border-radius: 5px;
+      border: solid 1px black;
+      cursor: pointer;
+    }
+
+    }
+    .order {
+      background: rgb(248, 248, 248);
+      min-width: 400px;
+      border-radius: 0 10px 10px 0;
+      padding: 22px 15px 0 15px;
+      grid-area: bill;
+      h4 {
+        font-size: 18px;
+        line-height: 20px;
+        color: #5A1094;
+        font-family: Helvetica Neue;
+        margin: 0 0 10px 0;
+      }
+
+      .order__item-black {
+        font-family: Helvetica Neue;
+        font-size: 10px;
+        line-height: 12px;
+        color: #2B2525;
+        margin: 2px 0;
+      }
+
+      h5, .order__item-gray {
+        margin: 0 0 7px 0;
+        font-family: Helvetica Neue;
+        font-size: 12px;
+        line-height: 11px;
+        color: #777879;
+      }
+
+      .order__item-gray p {
+        padding: 3px 0;
+      }
+
+      .order__item-description {
+        display: flex;
+        column-gap: 10px;
+      }
+
+      .order__item, .order__summary {
+        padding: 12px 0;
+        border-bottom: solid 1px #E3E3E3;
+      }
+
+      .order__total {
+        font-family: Helvetica Neue;
+        font-size: 12px;
+        line-height: 13px;
+        color: #431C5D;
+        font-weight: bold;
+      }
+
+      .order__edit {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        text-decoration: underline;
+        font-family: Helvetica Neue;
+        font-size: 12px;
+        line-height: 14px;
+        color: #979797;
+
+        &:active, &:focus {
+          outline: none;
+        }
+      }
+
+    }
+
+  }
+
+.payment{
+  label {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    line-height: 18px;
+    color: #5A1094;
+  }
+}
+
+.form__payment-secure{
+  padding-bottom: 20px;
+}
+.order__edit-elem{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column-reverse;
+}
+.order__delete{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.no-display{
+  display: none;
+}
+
+.form__heading{
+  font-size: 26px;
+  line-height: 31px;
+  color: #5A1094;
+  font-family: Helvetica Neue;
+}
+.bill{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 1;
+  p{
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+  button{
+    border: none;
+    background: transparent;
+  }
+}
+.disabled {
+  filter: opacity(50%);
+  cursor: default;
+}
