@@ -18,9 +18,43 @@ formBlock.forEach(el => {
     el.style.width = width;
 });
 
+const confirmationWindow = document.querySelector('.confirmation');
+const rejectConfirmation = document.querySelector('.confirmation__no');
+const acceptConfirmation = document.querySelector('.confirmation__yes');
+const closeConfirmation = document.querySelector('.confirmation__close');
+
+const closeConfirmationWindow = () => {
+    confirmationWindow.style.display = 'none';
+};
+
+closeConfirmation.addEventListener('click', () => {
+    closeConfirmationWindow();
+});
+
+rejectConfirmation.addEventListener('click', () => {
+    closeConfirmationWindow();
+});
+
+acceptConfirmation.addEventListener('click', () => {
+    closeConfirmationWindow();
+    fetch("https://api.ipdata.co?api-key=test").then((response) => {
+        response.json().then((res) => {
+            console.log(res);
+            document.querySelector('#shopping_country').value = res.country_name;
+            phone.forEach(el => {
+                new IMask(el, {
+                    mask: `+{${res.calling_code}}(00)000-00-00`,
+                });
+            });
+            document.querySelector('#shopping_city').value = res.city;
+            document.querySelector('#shipping-zip').value = res.postal;
+        });
+    });
+});
 
 nextBtn.forEach((el, i) => {
-    el.addEventListener('click', ()=> {
+    el.addEventListener('click', (ev)=> {
+        ev.preventDefault();
         let validity = true;
         const inputSection = document.querySelectorAll('.shipping__form');
             const inputs = inputSection[i].querySelectorAll('.input');
@@ -30,6 +64,10 @@ nextBtn.forEach((el, i) => {
                         }
             });
         if (validity) {
+            if (ev.target === nextBtn[2]){
+                const form = document.querySelector('#form');
+                bindpostData(form);
+            }
             if (offset === +width.slice(0, width.length - 2) * (formBlock.length - 1)) {
                 offset = 0;
             } else {
@@ -63,7 +101,6 @@ nextBtn.forEach((el, i) => {
                 setTimeout(() => {
                     formBlock[slideTo - 1].classList.add('hidden');
                 }, 300);
-                console.log(offset);
                 inner.style.transform = `translateX(-${offset}px)`;
             }
         });
@@ -87,18 +124,7 @@ new IMask (cardCode, {
     mask: `000`,
 });
 
-    phone.forEach(el => {
-        new IMask(el, {
-            mask: `+{38}(000)000-00-00`,
-        });
-        el.setAttribute('placeholder', `+38`);
-        el.value = `+38`;
-    });
-
 //posting
-
-const form = document.querySelector('#form');
-bindpostData(form);
 
 const postData = async (url, data) => {
     const result = await fetch(url, {
@@ -113,8 +139,8 @@ const postData = async (url, data) => {
 }
 
 function bindpostData (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    //form.addEventListener('submit', (e) => {
+       // e.preventDefault();
 
         const formData = new FormData(form);
 
@@ -124,18 +150,19 @@ function bindpostData (form) {
             .then((response) => {
                 console.log(response);
                 const bill = document.createElement('div');
-                bill.innerHTML = `<div class="shipping bill">
+                bill.innerHTML = `<div class="bill">
     <h1 class="form__heading">Thank you for your order!</h1>
     <p><b>Order number is: 172837837128</b></p>
     <p>You will receive an email confirmation shortly to <a href="#"><span id="bill-email">${response.billing_email}</span></a></p>
     <p>Estimated delivery day is <br><b>Friday 1st April 2016</b></p>
     <button><a href="#">print recipe</a></button>
 </div>`;
-            document.appendChild(bill);
+                const content = document.querySelector('.main__content');
+            content.appendChild(bill);
             })
             .catch(() => {
             });
-    });
+   // });
 }
 
 //edit
@@ -198,5 +225,35 @@ const billEmail = document.querySelector('#bill-email');
 billEmail.textContent = document.querySelector('#billing_email').value;
 //
 
+// const getResources = async (url) => {
+//     const result = await fetch(url);
+//
+//     if(!result.ok){
+//         throw new Error(`Could not fetch ${url}, status: ${result.status}`);
+//     }
+//
+//     return await result.json();
+// }
+//
+// getResources('https://api.ipdata.co?api-key=test')
+//     .then(data => {
+//             console.log(data);
+//     }).catch();
+
+// const request = new XMLHttpRequest();
+//
+// request.open('GET', 'https://api.ipdata.co/?api-key=test');
+//
+// request.setRequestHeader('Accept', 'application/json');
+//
+// request.onreadystatechange = function () {
+//     if (this.readyState === 4) {
+//         console.log(this.responseText);
+//     }
+//     else {
+//         console.log('error');
+//     }
+// };
+// request.send();
 
 

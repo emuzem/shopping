@@ -26,13 +26,24 @@ body {
   padding: 0 150px;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1100px) {
   .main {
     .main__content {
       grid-template-areas: "payment" "bill";
       grid-template-rows: 1fr 1fr;
       grid-template-columns: 1fr;
     }
+  }
+  .bill {
+    width: 100%;
+    height: 50%;
+
+  }
+  .slides__inner{
+    width: 100%;
+  }
+  .shipping{
+    width: 100%;
   }
 }
 @media screen and (max-width: 800px) {
@@ -41,6 +52,10 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
+  .order__container{
+    max-width: 75%;
+    margin: auto;
+  }
   .container {
     padding: 0 10px;
   }
@@ -52,22 +67,68 @@ body {
 }
 
 @media screen and (max-width: 450px) {
+  .form__divs-together{
+    width: 100%;
+    justify-content: flex-start;
+    gap: 4px;
+    .form__short{
+      box-sizing: content-box;
+      width: 100%;
+    }
+  }
   .container{
     padding: 0;
   }
   .order{
-    max-width: 400px;
+    min-width: 90%;
   }
   .main {
     .main__content {
       .shipping {
-        padding: 0 5px;
-        input {
-          padding: 20px 0 20px 20px;
-          width: 90%;
-        }
+        padding: 10px 1px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 430px){
+  .form__divs-together{
+    flex-direction: column;
+  }
+  input{
+    max-width: 100%;
+    justify-self: flex-start;
+  }
+  .main {
+    .main__content {
+      .shipping {
+        padding: 3px 2px;
+      }
+    }
+  }
+  .slides__inner{
+    width: 90%;
+  }
+  //.order__container{
+  //  max-width: 80%;
+  //}
+  .container{
+    padding: 0;
+  }
+  input {
+    width: 70%;
+  }
+  .order__divide{
+    //flex-direction: column;
+    //justify-content: flex-start;
+  }
+  .order {
+    max-width: content-box;
+  }
+}
+@media screen and (max-width: 415px){
+  .header__big-logo{
+    display: none;
   }
 }
 
@@ -106,7 +167,7 @@ header{
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
     border-radius: 10px;
     .shipping {
-      max-width: 500px;
+      max-width: 700px;
       padding: 22px 37px 37px 37px;
       grid-area: payment;
     }
@@ -171,7 +232,8 @@ header{
           padding: 15px;
           border-radius: 5px;
           border: solid 1px #DEDCDC;
-          margin: 5px 5px 5px 0;
+          margin: 5px auto;
+          width: 90%;
 
           &::placeholder{
             font-size: 16px;
@@ -182,22 +244,23 @@ header{
         }
 
         #shopping_city {
-          margin: 10px 5px 10px 0;
+          margin: 10px auto;
         }
-        .form__long{
-          width: 100%;
-        }
-
-        .form__middle{
-          width: 50%;
-        }
-
+        //.form__long{
+        //  width: 100%;
+        //}
+        //
+        //.form__middle{
+        //  width: 50%;
+        //}
+        //
         .form__short{
-          width: 30%;
+          max-height: 50px;
+          box-sizing: border-box;
         }
-        .form__short-payment {
-          width: 40%;
-        }
+        //.form__short-payment {
+        //  width: 40%;
+        //}
         .label {
           display: inline-flex;
           align-self: center;
@@ -326,12 +389,15 @@ header{
   font-family: Helvetica Neue;
 }
 .bill{
+  box-sizing: border-box;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  left: 0;
+  top: 0;
   background: white;
   z-index: 1;
+  height: 100%;
+  width: 55%;
   p{
     margin: 10px 0;
     padding: 10px 0;
@@ -344,4 +410,69 @@ header{
 .disabled {
   filter: opacity(50%);
   cursor: default;
+}
+
+.confirmation{
+  position: relative;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  height: 130px;
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 4px 13px -3px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  z-index: 1;
+  .confirmation__first-text{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .confirmation__second-text{
+    font-size: 14px;
+    color: #4d4f4d;
+  }
+  .confirmation__buttons{
+    text-align: right;
+  }
+  button{
+    width: 80px;
+    height: 30px;
+    margin: 10px 5px 0 0;
+    box-shadow: 0 0 0.5px 0.5px black;
+    color: #4d4f4d;
+    border: none;
+    border-radius: 2px;
+  }
+  .confirmation__close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #4d4f4d;
+    font-size: 12px;
+  }
+  .confirmation__element{
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    position: absolute;
+    left: 20px;
+    top: -8px;
+    transform: rotate(45deg);
+    z-index: 0;
+  }
+}
+
+.form__divs-together{
+  justify-content: center;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: auto;
+  width: 96%;
+  input {
+    flex-grow: 1;
+  }
 }
