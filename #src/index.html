@@ -89,7 +89,7 @@
                 </nav>
                 <section class="form shipping__form">
                     <div class="order__divide">
-                        <h2 class="form__heading">Billing Information</h2>
+                        <h2 class="form__heading" style="font-weight: lighter">Billing Information</h2>
                         <button type="button" class="form__heading-button">Same as shipping</button>
                     </div>
                     <h3>Billing contact</h3>
@@ -122,7 +122,7 @@
                     <div class="main__step text-active" data-slide-to="2" tabindex="0">Payment</div>
                 </nav>
                 <section class="form shipping__form">
-                    <h2 class="form__heading">Payment</h2>
+                    <h2 class="form__heading" style="font-weight: lighter">Payment</h2>
                     <div class="form__payment-secure">
                         <img src="img/secure.svg">
                     </div>
@@ -136,14 +136,16 @@
                     </fieldset>
                     <div class="form__payment-little">
                     <fieldset class="form__fieldset">
-                        <div>
+                            <div class="form__short-wrapper">
+                                <div class="form__short-payment">
                         <h3>Expire Date</h3>
                         <input class="form__short-payment input" placeholder="MM/YY" name="payment_date" id="payment_date">
                         </div>
-                        <div class="form__short-wrapper">
+                                <div class="form__short-payment">
                         <h3>Security Code</h3>
                         <input class="form__short-payment input" name="payment_code" id="payment_code">
                         </div>
+                            </div>
                     </fieldset>
                     </div>
                     <button id="submit" class="form__next next" type="submit">Pay Securely</button>

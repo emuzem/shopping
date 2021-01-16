@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6ba6beb-f0e0-4c98-834b-c8ad52a4f8f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/#src/scss/animations.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/#src/scss/mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/#src/scss/new.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/#src/scss/optionalClasses.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/#src/scss/variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/#src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/#src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/#src/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/#src/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/#src/scss/new.scss" beforeDir="false" afterPath="$PROJECT_DIR$/#src/scss/new.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/#src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/#src/scss/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.css" afterDir="false" />
@@ -92,7 +88,7 @@
       <workItem from="1610194431988" duration="2034000" />
       <workItem from="1610205422548" duration="144000" />
       <workItem from="1610378570455" duration="13047000" />
-      <workItem from="1610571390368" duration="27265000" />
+      <workItem from="1610571390368" duration="32278000" />
     </task>
     <servers />
   </component>

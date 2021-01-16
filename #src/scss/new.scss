@@ -60,7 +60,7 @@ header{
     //
     display: grid;
     grid-template-areas: "payment bill";
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: auto 1fr;
   }
 
   .main__navigation{
@@ -362,5 +362,16 @@ h5, .order__item-gray {
     //
     background-color: white;
     transform: rotate(45deg);
+  }
+}
+.form__short-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  //flex-grow: 1;
+  .form__short-payment{
+    width: 50%;
+    input {
+      margin: 5px 0;
+    }
   }
 }

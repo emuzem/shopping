@@ -74,7 +74,7 @@ const closeConfirmationWindow = () => {
     confirmationWindow.style.cssText = `animation: fade 0.5s`;
     setTimeout(() => {
         confirmationWindow.style.display = 'none';
-    },500);
+    },400);
 };
 
 closeConfirmation.addEventListener('click', () => {
@@ -199,6 +199,8 @@ function bindpostData (form) {
         postData('https://jsonplaceholder.typicode.com/posts', json)
             .then((response) => {
                 console.log(response);
+                window.scrollTo(0, 0);
+                document.querySelectorAll('.shipping')[2].style.display = 'none';
                 const bill = document.createElement('div');
                 bill.innerHTML = `<div class="bill">
     <h1 class="form__heading">Thank you for your order!</h1>
