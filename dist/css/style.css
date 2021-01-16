@@ -501,8 +501,8 @@ h5,
 
 @media screen and (max-width: 1100px) {
   .main .main__content {
-    grid-template-areas: "bill" "payment";
-    grid-template-rows: auto 1fr;
+    grid-template-areas: "payment" "bill";
+    grid-template-rows: auto auto;
     grid-template-columns: 1fr;
   }
 
@@ -594,6 +594,10 @@ h5,
 @media screen and (max-width: 415px) {
   .header__big-logo {
     display: none;
+  }
+
+  header {
+    padding: 0 10px;
   }
 }
 

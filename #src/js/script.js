@@ -199,6 +199,7 @@ function bindpostData (form) {
         postData('https://jsonplaceholder.typicode.com/posts', json)
             .then((response) => {
                 console.log(response);
+                editStart.style.visibility = 'hidden';
                 window.scrollTo(0, 0);
                 document.querySelectorAll('.shipping')[2].style.display = 'none';
                 const bill = document.createElement('div');
