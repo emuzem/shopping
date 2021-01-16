@@ -1,3 +1,50 @@
+//edit
+const editStart = document.querySelector('.order__edit');
+const deleteElem = document.querySelectorAll('.order__delete');
+const orderItem = document.querySelectorAll('.order__item');
+const orderParent = document.querySelector('.order');
+const itemPrice = document.querySelectorAll('.order__item-price');
+let totalPrice = document.querySelector('.order__total-price');
+let totalTaxes = document.querySelector('.order__total-taxes');
+const totalSum = document.querySelector('.order__total-sum');
+
+const toggleEditMode = () => {
+    deleteElem.forEach(el => {
+        el.style.cssText = `animation: rotation 0.3s`;
+        el.classList.toggle('no-display');
+    });
+    if (editStart.textContent === 'edit order'){
+        editStart.textContent = 'Save';
+    } else {
+        editStart.textContent = 'edit order';
+    }
+    editStart.addEventListener('click', toggleEditMode);
+};
+
+let totalPriceValue = totalPrice.textContent.slice(1, totalPrice.textContent.length);
+let totalTaxesValue = totalTaxes.textContent.slice(1, totalTaxes.textContent.length);
+
+const deleteElement = (i, number) => {
+    i.parentElement.parentElement.style.cssText = `animation: fade 0.5s`;
+    setTimeout(() => {
+        i.parentElement.parentElement.remove();
+    }, 500);
+    let price = itemPrice[number].textContent;
+    price = price.slice(1, price.length);
+    totalPriceValue = Math.round(totalPriceValue - price);
+    totalTaxesValue = Math.round(totalTaxesValue - 4.04);
+    totalPrice.textContent = '$' + totalPriceValue;
+    totalTaxes.textContent = '$' + totalTaxesValue;
+    totalSum.textContent = '$' + +(totalPriceValue + totalTaxesValue);
+}
+
+editStart.addEventListener('click', toggleEditMode);
+deleteElem.forEach((el, i) => {
+    el.addEventListener('click', () => {
+        deleteElement(el, i);
+    });
+});
+
 
 const nextBtn = document.querySelectorAll('.next');
 const formBlock = document.querySelectorAll('.shipping');
@@ -24,7 +71,10 @@ const acceptConfirmation = document.querySelector('.confirmation__yes');
 const closeConfirmation = document.querySelector('.confirmation__close');
 
 const closeConfirmationWindow = () => {
-    confirmationWindow.style.display = 'none';
+    confirmationWindow.style.cssText = `animation: fade 0.5s`;
+    setTimeout(() => {
+        confirmationWindow.style.display = 'none';
+    },500);
 };
 
 closeConfirmation.addEventListener('click', () => {
@@ -164,50 +214,6 @@ function bindpostData (form) {
             });
    // });
 }
-
-//edit
-const editStart = document.querySelector('.order__edit');
-const deleteElem = document.querySelectorAll('.order__delete');
-const orderItem = document.querySelectorAll('.order__item');
-const orderParent = document.querySelector('.order');
-const itemPrice = document.querySelectorAll('.order__item-price');
-let totalPrice = document.querySelector('.order__total-price');
-let totalTaxes = document.querySelector('.order__total-taxes');
-const totalSum = document.querySelector('.order__total-sum');
-
-const toggleEditMode = () => {
-    deleteElem.forEach(el => {
-        el.classList.toggle('no-display');
-    });
-    if (editStart.textContent === 'edit order'){
-        editStart.textContent = 'Save';
-    } else {
-        editStart.textContent = 'edit order';
-    }
-    editStart.addEventListener('click', toggleEditMode);
-};
-
-let totalPriceValue = totalPrice.textContent.slice(1, totalPrice.textContent.length);
-let totalTaxesValue = totalTaxes.textContent.slice(1, totalTaxes.textContent.length);
-
-const deleteElement = (i) => {
-    orderParent.removeChild(orderItem[i]);
-    let price = itemPrice[i].textContent;
-    price = price.slice(1, price.length);
-    console.log(price);
-    totalPriceValue = Math.round(totalPriceValue - price);
-    totalTaxesValue = Math.round(totalTaxesValue - 4.04);
-    totalPrice.textContent = '$' + totalPriceValue;
-    totalTaxes.textContent = '$' + totalTaxesValue;
-    totalSum.textContent = '$' + +(totalPriceValue + totalTaxesValue);
-}
-
-editStart.addEventListener('click', toggleEditMode);
-deleteElem.forEach((el, i) => {
-    el.addEventListener('click', () => {
-        deleteElement(i);
-    });
-});
 
 //autofill
 

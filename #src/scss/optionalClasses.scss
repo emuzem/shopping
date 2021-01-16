@@ -1,0 +1,12 @@
+.hidden {
+  visibility: hidden;
+}
+
+.no-display{
+  display: none;
+}
+
+.disabled {
+  filter: opacity(50%);
+  cursor: default;
+}

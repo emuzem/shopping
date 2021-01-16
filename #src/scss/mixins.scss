@@ -1,0 +1,10 @@
+@mixin opt_button ($color) {
+  background: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+  border: none;
+  font-family: Helvetica Neue;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color;
+}

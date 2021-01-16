@@ -1,0 +1,16 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+@keyframes fade {
+  from {
+    filter: opacity(100%);
+  }
+  to {
+    filter: opacity(0%);
+  }
+}
